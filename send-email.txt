@@ -1,0 +1,38 @@
+emailjs.init("aacfx8UxSFnwoTO6b");
+
+const names = document.querySelector(".name");
+const email = document.querySelector(".email");
+const phone = document.querySelector(".phone");
+const whatsapp = document.querySelector(".whatsapp");
+const address = document.querySelector(".address");
+const sendButton = document.querySelector(".send");
+
+sendButton.addEventListener("click", () => {
+  const productID = Math.random().toString(36).substring(2, 10);
+
+  emailjs.send("service_ojfiknh", "template_4heepdr", {
+    customer_name: names.value,
+    email: email.value,
+    phone_number: phone.value,
+    whatsapp_number: whatsapp.value,
+    address: address.value,
+    quantity: 12,
+    price_total: 121,
+    product_id: productID
+  })
+  .then((res) => {
+    console.log("SUCCESS!", res.status, res.text);
+    alert("Email sent successfully!");
+  })
+  .catch((err) => {
+    console.error("FAILED...", err);
+    alert("Failed to send email.");
+  });
+});
+
+
+<!-- ✅ Include EmailJS SDK globally -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- ✅ Load your main.js (NO type="module") -->
+<script src="main.js"></script>

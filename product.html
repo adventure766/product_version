@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+    </style>
+    <link
+      href="https://cdn.boxicons.com/fonts/animations.min.css"
+      rel="stylesheet"/>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"/>
+      <link rel="stylesheet" href="payment.css">
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"/> 
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div class="product-card" style="margin-top: 0px; box-shadow:none; padding-bottom: 10px; margin-bottom: 100px; height: 600px; position: inherit;" >
+        <div class="product-images">
+          <div class="main">
+            <img src="img1.png" alt="" class="main-img" />
+          </div>
+          <div class="other-img">
+            <img src="img2.png" alt="" class="img" />
+            <img src="img3.png" alt="" class="img" />
+            <img src="img4.png" alt="" class="img" />
+            <img src="img5.png" alt="" class="img" />
+          </div>
+        </div>
+
+        <div class="product-details">
+          <h1 class="product-d-name">Stereo AirPods</h1>
+          <h3 class="product-d-rating">⭐⭐⭐⭐⭐ 5.0(120)</h3>
+          <h3 class="old-price">
+            Old Price : <span style="text-decoration: line-through; color: rgba(255, 0, 0, 0.413)"
+              >150,000 SSP</span
+            >
+          </h3>
+          <h3 class="new-price">
+            New Price : <span style="color: rgb(1, 206, 1)">120,000 SSP</span>
+          </h3>
+          
+          <h4 class="info"  style="margin-top: 20px;" >✔️Availability : <span style="font-weight: normal;">in stock</span></h4>
+          <h4 class="info">✔️Category : <span style="font-weight: normal;">wireless</span></h4>
+          <h4 class="info">✔️Shipping Area : <span style="font-weight: normal;">juba, south-sudan </span></h4>
+          <h4 class="info">✔️Shipping cost : <span style="font-weight: normal;">free</span></h4>
+          <h4 class="info">✔️Special for : <span style="font-weight: normal;">GYM/Activities</span></h4>
+          <h4 class="info">✔️Return policy : <span style="font-weight: normal;">7-days </span></h4>
+          <h4 class="info">✔️Battery Life : <span style="font-weight: normal;">24hr</span></h4>
+          <button class="add-to-cart"><i class='bx  bx-cart-plus'  style='color:black'></i>  Add to cart</button>
+          <button class="order-now">Order Now</button>
+          
+        </div>
+
+        <div class="description">
+          <h2 class="about-details">Product Description</h2>
+          <p class="very-details">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+            exercitationem ratione expedita esse velit a corrupti nemo
+            asperiores eius neque. Delectus voluptas labore adipisci
+            reprehenderit mollitia a quibusdam eos, modi repudiandae reiciendis
+            dolore rerum repellendus ipsum laudantium nisi, error ipsam deserunt
+            iste, ea suscipit odit dicta? Laborum tempora natus minus.
+          </p>
+        </div>
+        <button class="back">⬅Back to Home page</button>
+        
+      </div>
+      <div class="payment-card">
+        <div class="options-payment">
+          <h3 class="payment-gateway">Choose your Payment</h3>
+          <h1 class="closePayment"><i class='bx  bx-chevrons-down-up'  style='color:#ffffff'></i> </h1>
+        <img src="MOMO.png" alt="" class="momo">
+        <img src="COD.png" alt="" class="cod">
+        </div>
+
+        <div class="momo-form">
+          <img src="momo-logo.png" alt="" class="momo-logo">
+          <h3 class="momo-gateway">Pay with MOMO</h3>
+          <p class="g-paragraph">Please make sure to complete the payment after sending the money comeback to this window for payment verification</p>
+          <div class="quantity">
+              <button class="minus">-</button>
+              <h3 class="quantity-total">1</h3>
+              <button class="plus">+</button>
+            </div>
+            <button class="send-order">Pay now</button>
+            <button class="verify-order">Verify order</button>
+            <h1 class="closeMomo"><i class='bx  bx-chevrons-down-up'  style='color:#ffffff'></i> </h1>
+            <div class="payment-verification">
+              <label for="" class="name">Name</label>
+              <input type="text" class="customer-name">
+              <label for="" class="email">Email</label>
+              <input type="text" class="customer-email">
+              <label for="" class="number">Number</label>
+              <input type="text" class="customer-number">
+              <label for="" class="address">Address</label>
+              <input type="text" class="customer-address">
+              <label for="" class="TXN_id">Transaction id</label>
+              <input type="text" class="customer-t_id">
+              <button class="submit-data">Submit</button>
+              <h1 class="closeMomo-form"><i class='bx  bx-chevrons-down-up'  style='color:#ffffff'></i> </h1>
+            </div>
+            
+        </div>
+      </div>
+
+     
+        <!-- ✅ Include EmailJS SDK globally -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+ 
+     <script src="product.js"></script>
+</body>
+</html>
