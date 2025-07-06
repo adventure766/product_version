@@ -5,6 +5,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
     </style>
+    <link rel="stylesheet" href="cart.css">
     <link
       href="https://cdn.boxicons.com/fonts/animations.min.css"
       rel="stylesheet"/>
@@ -20,6 +21,11 @@
     <title>Document</title>
 </head>
 <body>
+  <div class="page-header">
+    <h3 class="logoss">STEREO <span style="color: #fea000">AIRPODS</span></h3>
+    <h1 class="cart-icon"><i class='bx  bx-cart'  style='color:#ffffff'></i> </h1>
+    <h4 class="total-cart">0</h4>
+  </div>
   
     <div class="product-card" style="margin-top: 0px; box-shadow:none; padding-bottom: 10px; margin-bottom: 100px; height: 600px; position: inherit;" >
         <div class="product-images">
@@ -107,6 +113,36 @@
               <h1 class="closeMomo-form"><i class='bx  bx-chevrons-down-up'  style='color:#ffffff'></i> </h1>
             </div>
             
+        </div>
+      </div>
+
+      <div class="cart-card">
+        <div class="cart-content">
+          <h1 class="cart-headline">Order details</h1>
+        <div class="cart-container">
+          <h3 class="quantity-text">Quantity</h3>
+          <div class="cart-quantity">
+              <button class="minus-btn">-</button>
+              <h3 class="quantity-total-cart">0</h3>
+              <button class="plus-btn">+</button>
+            </div>
+            <h3 class="property">Color</h3>
+            <h3 class="value">black</h3>
+            <h3 class="property">Price</h3>
+            <h3 class="value">120,000 SSP</h3>
+            <h3 class="property">Delivery Fee</h3>
+            <h3 class="value">Free</h3>
+            <h3 class="property">Discount</h3>
+            <h3 class="value">20%</h3>
+            <h3 class="sub-total">Sub Total</h3>
+            <h3 class="cart-total">0.00</h3>
+            
+        </div>
+        <button class="cart-button">Pay now</button>
+        <h1 class="closeCart"><i class='bx  bx-chevrons-down-up'  style='color:red'></i> </h1>
+        <h1 class="carticon"><i class='bx  bx-cart'  style='color:black'></i> </h1>
+        <h5 class="zero-cart">There is not product in your cart</h5>
+        <img src="loading.webp" alt="" class="loading-gif">
         </div>
       </div>
 
