@@ -16,7 +16,23 @@ let gatewayOptions = document.querySelector(".options-payment")
 let momoImage = document.querySelector(".momo")
 let orderNow = document.querySelector(".order-now")
 let addtoCart = document.querySelector(".add-to-cart")
+let totalCart =document.querySelector(".total-cart")
+let productDetailes =document.querySelector(".product-details")
+let cartTotal = document.querySelector(".cart-total")
+let cartBtnminus = document.querySelector(".minus-btn")
+let cartBtnplus = document.querySelector(".plus-btn")
+let cartQuantity = document.querySelector(".quantity-total-cart")
+let cartClose  = document.querySelector(".closeCart")
+let cartCard = document.querySelector(".cart-card")
+let cartBtn = document.querySelector(".cart-button")
+let cartIcon = document.querySelector(".cart-icon")
+let cartContainer = document.querySelector(".cart-container")
+let cartHeadline = document.querySelector(".cart-headline")
+let loadingImg = document.querySelector(".loading-gif")
+let zeroCart = document.querySelector(".zero-cart")
+let cart_icon = document.querySelector(".carticon")
 let quantityTotal = 0
+let totalValue = 0
 
 images.forEach((image) =>{
     image.addEventListener("click", ()=>{
@@ -32,7 +48,22 @@ orderNow.addEventListener("click", ()=>{
 })
 
 addtoCart.addEventListener("click", ()=>{
-    paymentsCard.style = 'display: block;'
+    if(totalValue>=1){
+        cartQuantitytotal++
+        cartQuantity.textContent = cartQuantitytotal
+        cartTotal.textContent = `${cartQuantitytotal *120000} SSP`
+        totalCart.textContent = cartQuantitytotal
+
+    }else {
+    totalValue ++
+    totalCart.textContent = totalValue
+     }
+    
+    const btnParent = addtoCart.parentElement
+    let name = btnParent.querySelector(".product-d-name")
+    console.log(name)
+     
+
 })
 
 momoImage.addEventListener("click", ()=>{
@@ -46,6 +77,8 @@ backHome.addEventListener("click", ()=>{
 
 closeMomo.addEventListener("click", ()=>{
     momo.style= 'display: none;'
+    total.textContent = '0'
+    quantityTotal = 0
 })
 
 closeMomoForm.addEventListener("click", ()=>{
@@ -83,6 +116,78 @@ orderVerify.addEventListener("click", ()=>{
     paymentVerify.style.display = "flex"
     
 })
+
+
+
+// cart Page
+let cartQuantitytotal= 0
+
+cartBtnminus.addEventListener("click", ()=>{
+    if(cartQuantitytotal >0){
+    cartQuantitytotal --
+    cartQuantity.textContent = cartQuantitytotal
+    cartTotal.textContent = `${cartQuantitytotal *120000} SSP`
+    }else{
+        return
+    }
+})
+
+cartBtnplus.addEventListener("click", ()=>{
+    
+    cartQuantitytotal ++
+    let cart_total = cartQuantitytotal *120000
+    cartQuantity.textContent = cartQuantitytotal
+    cartTotal.textContent = `${cart_total.toLocaleString()} SSP`
+    
+})
+
+cartBtn.addEventListener("click", ()=>{
+    paymentsCard.style = 'display: block; z-index :1;'
+})
+
+
+cartClose.addEventListener("click", ()=>{
+    cartCard.style = 'display: none;'
+
+    
+})
+let timeout;
+
+cartIcon.addEventListener("click", () => {
+    clearTimeout(timeout);
+
+    if (totalValue > 0) {
+        // Initial UI setup
+        loadingImg.style.display = 'block';
+        cartCard.style.display = 'block';
+        cartHeadline.style.display = 'block';
+        cart_icon.style.display = 'none';
+        zeroCart.style.display = 'none';
+        cartContainer.style.display = 'none';
+        cartBtn.style.display = 'none';
+
+        // Delay showing actual cart content
+        timeout = setTimeout(() => {
+            cartContainer.style.display = 'grid';
+            cartClose.style.position = 'absolute';
+            cartClose.style.marginTop = '-483px';
+            cartBtn.style.display = 'block';
+            loadingImg.style.display = 'none';
+        }, 3000);
+    } else {
+        // Show empty cart message
+        clearTimeout(timeout);
+        cartCard.style.display = 'block';
+        cartHeadline.style.display = 'none';
+        cartContainer.style.display = 'none';
+        cartClose.style.position = 'fixed';
+        cartClose.style.marginTop = '10px';
+        cartBtn.style.display = 'none';
+        loadingImg.style.display = 'none';
+    }
+});
+
+
 
 
 
